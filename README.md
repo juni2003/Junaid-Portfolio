@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="https://vitejs.dev/logo.svg" alt="Vite Logo" width="100"/>
-  <img src="https://reactjs.org/logo-og.png" alt="React Logo" width="100"/>
-  <img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.6ea76f51.svg" alt="TailwindCSS Logo" width="80"/>
+  <img src="https://vitejs.dev/logo.svg" alt="Vite Logo" width="100" height="50"/>
+  <img src="https://reactjs.org/logo-og.png" alt="React Logo" width="100" height="50"/>
 </p>
 
 <h1 align="center">Junaid Satti Portfolio</h1>
