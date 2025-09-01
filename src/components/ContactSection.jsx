@@ -241,7 +241,7 @@ export const ContactSection = () => {
                 <h4 className="font-medium mb-4">Connect With Me</h4>
                 <div className="flex space-x-4 justify-center">
                   {[
-                    { icon: Linkedin, href: "#" },
+                    { icon: Linkedin, href: "https://www.linkedin.com/in/junaid-mohi-ud-din/" },
                     { icon: Twitter, href: "#" },
                     { icon: Instagram, href: "#" }
                   ].map((social, index) => (
