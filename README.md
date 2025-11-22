@@ -18,7 +18,7 @@ This project is developed using:
 - ⚡ [Vite](https://vitejs.dev/) — Fast build tool with optimized HMR.
 - ⚛️ [React](https://reactjs.org/) — JavaScript library for UI development.
 - 🎨 [TailwindCSS](https://tailwindcss.com/) — Utility-first CSS framework.
-- 🧠 [Python & Flask (in backend projects)] — For AI and recommendation systems.
+- 🧠 [Python & Flask] (in backend projects) — For AI and recommendation systems.
 - 🧰 Tools: Docker, Git, VS Code, MongoDB.
 
 ---
