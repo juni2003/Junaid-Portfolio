@@ -72,6 +72,16 @@ const projects = [
     demoUrl: "#",
     githubUrl: "https://github.com/juni2003/Flappy-Bird-2-player-game",
   },
+  {
+    id: 5,
+    title: "VisiHealth AI",
+    description:
+      "An explainable Medical Visual Question Answering system that provides answers with visual evidence and medical reasoning. Combines a custom CNN for ROI detection, fine-tuned BioBERT for clinical text understanding, and knowledge graph integration for transparent, clinically meaningful AI decisions.",
+    image: "/projects/Visihealth.jpg",
+    tags: ["Python", "PyTorch", "BioBERT", "Medical AI", "Computer Vision"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
 ];
 
 export const ProjectsSection = () => {
@@ -112,7 +122,7 @@ export const ProjectsSection = () => {
 
           <div 
             ref={projectsGridRef}
-            className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 transition-all duration-1000 delay-400 ${
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-400 ${
               projectsGridVisible 
                 ? 'opacity-100 transform translate-y-0' 
                 : 'opacity-0 transform translate-y-8'
