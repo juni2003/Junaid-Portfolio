@@ -158,8 +158,9 @@ export const ProjectsSection = () => {
                       <a
                         href={project.demoUrl}
                         target="_blank"
-                        rel="noopener noreferrer" // Added rel attribute
+                        rel="noopener noreferrer"
                         className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <ExternalLink size={20} />
                       </a>
@@ -168,6 +169,7 @@ export const ProjectsSection = () => {
                         target="_blank"
                         rel="noopener noreferrer" // Added rel attribute
                         className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <Github size={20} />
                       </a>
