@@ -77,7 +77,7 @@ const projects = [
     title: "VisiHealth AI",
     description:
       "An explainable Medical Visual Question Answering system that provides answers with visual evidence and medical reasoning. Combines a custom CNN for ROI detection, fine-tuned BioBERT for clinical text understanding, and knowledge graph integration for transparent, clinically meaningful AI decisions.",
-    image: "/projects/Visihealth.jpg",
+    image: "/projects/VisiHealth.png",
     tags: ["Python", "PyTorch", "BioBERT", "Medical AI", "Computer Vision"],
     demoUrl: "#",
     githubUrl: "#",
