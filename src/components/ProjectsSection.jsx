@@ -91,6 +91,25 @@ export const ProjectsSection = () => {
   const [projectsGridRef, projectsGridVisible] = useScrollAnimation(0.1);
   const [buttonRef, buttonVisible] = useScrollAnimation(0.3);
 
+
+useEffect(() => {
+  const handleKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      setSelectedProject(null);
+    }
+  };
+  
+  if (selectedProject) {
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  }
+  
+  return () => {
+    document.removeEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'unset';
+  };
+}, [selectedProject]);
+  
   return (
     <section id="projects" className="py-24 px-4 relative">
       <div 
@@ -211,8 +230,12 @@ export const ProjectsSection = () => {
 
         {/* Modal with enhanced animations */}
         {selectedProject && (
-          <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 backdrop-blur-sm animate-in fade-in duration-300">
-            <div className="bg-card text-foreground p-8 rounded-lg max-w-2xl w-full relative shadow-xl transform transition-all duration-300 scale-100 animate-in slide-in-from-bottom-4">
+          <div 
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 backdrop-blur-sm animate-in fade-in duration-300"
+            onClick={() => setSelectedProject(null)}>
+            <div 
+              className="bg-card text-foreground p-8 rounded-lg max-w-2xl w-full relative shadow-xl transform transition-all duration-300 scale-100 animate-in slide-in-from-bottom-4"
+              onClick={(e) => e.stopPropagation()}>
               <button
                 className="absolute top-4 right-4 text-white hover:bg-red-500 hover:text-black p-2 rounded-full transition duration-300 cursor-pointer transform hover:scale-110"
                 onClick={() => setSelectedProject(null)}
