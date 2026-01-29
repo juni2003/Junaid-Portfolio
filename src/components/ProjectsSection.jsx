@@ -1,35 +1,7 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { useState, useEffect, useRef } from 'react';
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
-// Custom hook for intersection observer (FIXED VERSION)
-const useScrollAnimation = (threshold = 0.1) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const currentRef = ref.current; // Store ref.current in a variable
-    
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold }
-    );
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) { // Use the stored variable
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [threshold]);
-
-  return [ref, isVisible];
 };
 
 const projects = [
