@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
-
 // Utility function (cn replacement)
 const cn = (...classes) => {
   return classes.filter(Boolean).join(' ');
