@@ -2,8 +2,6 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { useState, useEffect, useRef } from 'react';
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
-};
-
 const projects = [
   {
     id: 1,
