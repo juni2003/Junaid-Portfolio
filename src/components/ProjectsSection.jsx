@@ -54,7 +54,7 @@ const projects = [
   },
   {
   id: 6,
-  title: "CrawlX",
+  title: "CrawlX – Web Scraping Platform",
   description:
     "A production-ready full-stack web scraping platform for extracting, searching, and exporting data from real-world websites. Built with FastAPI and Next.js, featuring intelligent HTTP-based scraping, scheduled spiders, fuzzy search with PostgreSQL, and a modern interactive dashboard.",
   image: "/projects/Project5.png",
