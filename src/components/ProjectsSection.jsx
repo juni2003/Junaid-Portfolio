@@ -44,7 +44,7 @@ const projects = [
   },
   {
     id: 5,
-    title: "VisiHealth AI",
+    title: "VisiHealth AI (FYP)(In Process)",
     description:
       "An explainable Medical Visual Question Answering system that provides answers with visual evidence and medical reasoning. Combines a custom CNN for ROI detection, fine-tuned BioBERT for clinical text understanding, and knowledge graph integration for transparent, clinically meaningful AI decisions.",
     image: "/projects/VisiHealth.png",
