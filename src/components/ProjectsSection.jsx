@@ -52,6 +52,17 @@ const projects = [
     demoUrl: "#",
     githubUrl: "#",
   },
+  {
+  id: 6,
+  title: "CrawlX",
+  description:
+    "A production-ready full-stack web scraping platform for extracting, searching, and exporting data from real-world websites. Built with FastAPI and Next.js, featuring intelligent HTTP-based scraping, scheduled spiders, fuzzy search with PostgreSQL, and a modern interactive dashboard.",
+  image: "/projects/Project5.png",
+  tags: ["FastAPI", "Next.js", "PostgreSQL", "Web Scraping", "Full Stack"],
+  demoUrl: "#",
+  githubUrl: "https://github.com/juni2003/CrawlX-Data-Scrapping-Project",
+  },
+
 ];
 
 export const ProjectsSection = () => {
