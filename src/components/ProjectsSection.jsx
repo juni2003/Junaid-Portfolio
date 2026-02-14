@@ -62,6 +62,23 @@ const projects = [
   demoUrl: "https://www.youtube.com/watch?v=a0GlXZvMmtY",
   githubUrl: "https://github.com/juni2003/CrawlX-Data-Scrapping-Project",
   },
+  {
+  id: 7,
+  title: "Smart Farming Agentic AI",
+  description:
+    "An end-to-end full-stack Agentic AI system for precision agriculture that combines crop recommendation, plant disease detection, and RAG-based farming Q&A. Built with Flask and Next.js, integrating a Random Forest classifier (99.39% accuracy), ResNet50 transfer learning (98.97% accuracy), FAISS semantic search, and intelligent agent routing for dynamic multi-tool decision making.",
+  image: "/projects/Project6.png",
+  tags: [
+    "Agentic AI",
+    "Machine Learning",
+    "Deep Learning",
+    "Random Forest",
+    "RAG",
+    "Full Stack"
+  ],
+  demoUrl: "",
+  githubUrl: "https://github.com/juni2003/Smart-Farming-Agentic-AI",
+},
 
 ];
 
