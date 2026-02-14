@@ -34,16 +34,6 @@ const projects = [
   },
   {
     id: 4,
-    title: "Flappy Bird For 2 Players",
-    description:
-      "A desktop-based Flappy Bird game clone for 2 players built with SFML. Features object-oriented design, dynamic scoring, and smooth collision handling. A personal project to enhance C++ and game logic understanding.",
-    image: "/projects/Project4.png",
-    tags: ["C++", "SFML", "Game Development", "OOP"], // Fixed: removed irrelevant tags
-    demoUrl: "#",
-    githubUrl: "https://github.com/juni2003/Flappy-Bird-2-player-game",
-  },
-  {
-    id: 5,
     title: "VisiHealth AI (FYP)(In Process)",
     description:
       "An explainable Medical Visual Question Answering system that provides answers with visual evidence and medical reasoning. Combines a custom CNN for ROI detection, fine-tuned BioBERT for clinical text understanding, and knowledge graph integration for transparent, clinically meaningful AI decisions.",
@@ -53,7 +43,7 @@ const projects = [
     githubUrl: "#",
   },
   {
-  id: 6,
+  id: 5,
   title: "CrawlX – Web Scraping Platform",
   description:
     "A production-ready full-stack web scraping platform for extracting, searching, and exporting data from real-world websites. Built with FastAPI and Next.js, featuring intelligent HTTP-based scraping, scheduled spiders, fuzzy search with PostgreSQL, and a modern interactive dashboard.",
@@ -63,7 +53,7 @@ const projects = [
   githubUrl: "https://github.com/juni2003/CrawlX-Data-Scrapping-Project",
   },
   {
-  id: 7,
+  id: 6,
   title: "Smart Farming Agentic AI",
   description:
     "An end-to-end full-stack Agentic AI system for precision agriculture that combines crop recommendation, plant disease detection, and RAG-based farming Q&A. Built with Flask and Next.js, integrating a Random Forest classifier (99.39% accuracy), ResNet50 transfer learning (98.97% accuracy), FAISS semantic search, and intelligent agent routing for dynamic multi-tool decision making.",
