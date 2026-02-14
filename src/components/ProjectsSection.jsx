@@ -76,7 +76,7 @@ const projects = [
     "RAG",
     "Full Stack"
   ],
-  demoUrl: "",
+  demoUrl: "https://youtu.be/2n2FjiEn05s",
   githubUrl: "https://github.com/juni2003/Smart-Farming-Agentic-AI",
 },
 
