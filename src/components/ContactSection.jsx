@@ -157,13 +157,7 @@ export const ContactSection = () => {
                     href: "mailto:juni.xatti@gmail.com",
                     delay: "delay-500"
                   },
-                  {
-                    icon: Phone,
-                    title: "Phone",
-                    content: "+92 (342) 348-4425",
-                    href: "tel:+923423484425",
-                    delay: "delay-700"
-                  },
+                  
                   {
                     icon: MapPin,
                     title: "Location",
