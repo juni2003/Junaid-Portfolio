@@ -21,7 +21,7 @@ export const HeroSection = () => {
                     </h1>
                     <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-4">
                         <span class="text-primary"> AI & Full-Stack Developer</span>
-                        <br>
+                        <br></br>
                         I am building intelligent software systems that combine machine learning models with modern full-stack web applications.
                         I work with Python, React, FastAPI/Flask, and modern AI frameworks to create scalable platforms, data-driven tools, and AI-powered applications that solve real-world problems.
                     </p>
