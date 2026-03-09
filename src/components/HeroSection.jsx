@@ -20,8 +20,10 @@ export const HeroSection = () => {
                         <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2"> Satti</span>
                     </h1>
                     <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-4">
-                       Final-year Computer Science student specializing in full-stack development, React-based frontend and Python-based backend systems, and AI-powered applications.
-                        Passionate about building scalable web solutions and intelligent software that solve real-world problems.
+                        <span className="text-primary"> AI & Full-Stack </span> Developer
+                        <br>
+                        I am building intelligent software systems that combine machine learning models with modern full-stack web applications.
+                        I work with Python, React, FastAPI/Flask, and modern AI frameworks to create scalable platforms, data-driven tools, and AI-powered applications that solve real-world problems.
                     </p>
                     <div className="py-4 opacity-0 animate-fade-in-delay-4">
                         <a href="#projects" className="cosmic-button">
