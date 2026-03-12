@@ -1,43 +1,41 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import React, { useState } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-// Utility function (cn replacement)
-const cn = (...classes) => {
-  return classes.filter(Boolean).join(' ');
-};
+const cn = (...classes) => classes.filter(Boolean).join(" ");
 
 const skills = [
-  // Languages
   { name: "Python", category: "languages" },
   { name: "JavaScript", category: "languages" },
   { name: "C++", category: "languages" },
-  // Frontend
+
   { name: "HTML/CSS", category: "frontend" },
   { name: "React.js", category: "frontend" },
   { name: "Next.js", category: "frontend" },
   { name: "Tailwind CSS", category: "frontend" },
-  // Backend
+
   { name: "Flask", category: "backend" },
   { name: "FastAPI", category: "backend" },
   { name: "Node.js", category: "backend" },
 
-  // Databases
   { name: "MongoDB", category: "db" },
-  // Tools & IDEs
+  { name: "PostgreSQL", category: "db" },
+
+  { name: "Scikit-learn", category: "ai" },
+  { name: "NLP", category: "ai" },
+  { name: "Computer Vision", category: "ai" },
+  { name: "Recommendation Systems", category: "ai" },
+
   { name: "Git/GitHub", category: "tools" },
   { name: "VS Code", category: "tools" },
-  { name: "Docker", category: "tools" } 
-  //AI Skills
-  { name: "Scikit-learn", category: "AI/Data" },
-  { name: "NLP", category: "AI/Data" },
-  { name: "Computer Vision", category: "AI/Data" },
-  { name: "Recommendation Systems", category: "AI/Data" }
+  { name: "Docker", category: "tools" }
 ];
 
-const categories = ["all", "languages", "frontend", "backend","db", "AI/Data" , "tools"];
+const categories = ["all", "languages", "frontend", "backend", "db", "ai", "tools"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [showAll, setShowAll] = useState(false);
+
   const [containerRef, containerVisible] = useScrollAnimation(0.1);
   const [buttonsRef, buttonsVisible] = useScrollAnimation(0.2);
   const [skillsGridRef, skillsGridVisible] = useScrollAnimation(0.1);
@@ -46,39 +44,46 @@ export const SkillsSection = () => {
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
 
+  const displayedSkills = showAll ? filteredSkills : filteredSkills.slice(0, 6);
+
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
-      <div 
+      <div
         ref={containerRef}
         className={`relative bg-black/70 text-foreground text-center px-8 py-6 rounded-lg shadow-lg mx-auto max-w-4xl my-8 z-1 transition-all duration-1000 ${
-          containerVisible 
-            ? 'opacity-100 transform translate-y-0' 
-            : 'opacity-0 transform translate-y-10'
+          containerVisible
+            ? "opacity-100 transform translate-y-0"
+            : "opacity-0 transform translate-y-10"
         }`}
       >
         <div className="container mx-auto max-w-5xl">
-          <h2 className={`text-white text-3xl md:text-4xl font-bold mb-12 text-center transition-all duration-1000 delay-200 ${
-            containerVisible 
-              ? 'opacity-100 transform translate-y-0' 
-              : 'opacity-0 transform translate-y-8'
-          }`}>
-            My <span className="text-primary"> Skills</span>
+          <h2
+            className={`text-white text-3xl md:text-4xl font-bold mb-12 text-center transition-all duration-1000 delay-200 ${
+              containerVisible
+                ? "opacity-100 transform translate-y-0"
+                : "opacity-0 transform translate-y-8"
+            }`}
+          >
+            My <span className="text-primary">Skills</span>
           </h2>
-          
-          <div 
+
+          <div
             ref={buttonsRef}
             className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-1000 delay-400 ${
-              buttonsVisible 
-                ? 'opacity-100 transform translate-y-0' 
-                : 'opacity-0 transform translate-y-6'
+              buttonsVisible
+                ? "opacity-100 transform translate-y-0"
+                : "opacity-0 transform translate-y-6"
             }`}
           >
             {categories.map((category, key) => (
               <button
                 key={key}
-                onClick={() => setActiveCategory(category)}
+                onClick={() => {
+                  setActiveCategory(category);
+                  setShowAll(false);
+                }}
                 className={cn(
-                  "px-5 py-2 rounded-full transition-all duration-300 capitalize transform hover:scale-110", // Fixed: "hover:bd-secondary" -> "hover:bg-secondary"
+                  "px-5 py-2 rounded-full transition-all duration-300 capitalize transform hover:scale-110",
                   activeCategory === category
                     ? "bg-primary text-primary-foreground shadow-lg"
                     : "bg-secondary/70 text-white hover:bg-secondary"
@@ -88,44 +93,55 @@ export const SkillsSection = () => {
               </button>
             ))}
           </div>
-          
-          <div 
+
+          <div
             ref={skillsGridRef}
             className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-1000 delay-600 ${
-              skillsGridVisible 
-                ? 'opacity-100 transform translate-y-0' 
-                : 'opacity-0 transform translate-y-8'
+              skillsGridVisible
+                ? "opacity-100 transform translate-y-0"
+                : "opacity-0 transform translate-y-8"
             }`}
           >
-            {filteredSkills.map((skill, key) => (
+            {displayedSkills.map((skill, key) => (
               <div
                 key={key}
                 className={`bg-card p-5 rounded-lg shadow-lg card-hover hover:text-primary transition-all duration-500 transform hover:scale-105 hover:shadow-xl ${
-                  skillsGridVisible 
-                    ? `opacity-100 translate-y-0` 
-                    : 'opacity-0 translate-y-6'
+                  skillsGridVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
                 }`}
-                style={{ 
-                  transitionDelay: skillsGridVisible ? `${key * 100}ms` : '0ms' 
+                style={{
+                  transitionDelay: skillsGridVisible ? `${key * 100}ms` : "0ms"
                 }}
               >
                 <div className="text-center mb-4">
-                  <h3 className="font-semibold text-lg transition-colors duration-300">
-                    {skill.name}
-                  </h3>
+                  <h3 className="font-semibold text-lg">{skill.name}</h3>
                 </div>
                 <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                  <div 
+                  <div
                     className="h-full bg-gradient-to-r from-primary to-primary/70 rounded-full transition-all duration-1000 ease-out"
                     style={{
-                      width: skillsGridVisible ? '85%' : '0%',
-                      transitionDelay: skillsGridVisible ? `${key * 100 + 200}ms` : '0ms'
+                      width: skillsGridVisible ? "85%" : "0%",
+                      transitionDelay: skillsGridVisible
+                        ? `${key * 100 + 200}ms`
+                        : "0ms"
                     }}
                   />
                 </div>
               </div>
             ))}
           </div>
+
+          {!showAll && filteredSkills.length > 6 && (
+            <div className="mt-10 text-center">
+              <button
+                onClick={() => setShowAll(true)}
+                className="px-6 py-2 bg-primary text-primary-foreground rounded-full hover:scale-105 transition-all"
+              >
+                Show More Skills
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>
