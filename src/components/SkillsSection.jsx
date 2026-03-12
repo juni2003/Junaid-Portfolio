@@ -14,18 +14,27 @@ const skills = [
   // Frontend
   { name: "HTML/CSS", category: "frontend" },
   { name: "React.js", category: "frontend" },
+  { name: "Next.js", category: "frontend" },
   { name: "Tailwind CSS", category: "frontend" },
   // Backend
   { name: "Flask", category: "backend" },
+  { name: "FastAPI", category: "backend" },
   { name: "Node.js", category: "backend" },
-  { name: "MongoDB", category: "backend" },
+
+  // Databases
+  { name: "MongoDB", category: "db" },
   // Tools & IDEs
   { name: "Git/GitHub", category: "tools" },
   { name: "VS Code", category: "tools" },
-  { name: "Docker", category: "tools" } // Fixed: "Dockers" -> "Docker"
+  { name: "Docker", category: "tools" } 
+  //AI Skills
+  { name: "Scikit-learn", category: "AI/Data" },
+  { name: "NLP", category: "AI/Data" },
+  { name: "Computer Vision", category: "AI/Data" },
+  { name: "Recommendation Systems", category: "AI/Data" }
 ];
 
-const categories = ["all", "languages", "frontend", "backend", "tools"];
+const categories = ["all", "languages", "frontend", "backend","db", "AI/Data" , "tools"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
