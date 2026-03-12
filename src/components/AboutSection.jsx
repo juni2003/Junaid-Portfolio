@@ -36,7 +36,7 @@ export const AboutSection = () => {
               }`}
             >
               <h3 className="text-white text-2xl font-semibold">
-                <span className="text-primary">Full-Stack</span> Developer & <span className="text-primary">AI</span> Enthusiast
+                <span className="text-primary">Full-Stack</span> Developer & <span className="text-primary">AI/ML</span> Systems Builder
               </h3>
 
               <p className="text-white">
