@@ -40,14 +40,14 @@ export const AboutSection = () => {
               </h3>
 
               <p className="text-white">
-                I'm a final-year Computer Science student with hands-on experience in building full-stack web platforms,
-                 AI-based systems, and interactive user interfaces. My key strengths include React, Flask, Python, and modern JS frameworks.
+                I’m a final-year Computer Science student with hands-on experience building full-stack web platforms, data systems, and AI-powered applications. 
+                I work primarily with React, Python (Flask/FastAPI), and modern JavaScript frameworks to create scalable and user-focused software.
               </p>
 
               <p className="text-white">
-                I've worked on real-time applications, recommendation engines, and NLP/vision-based tools.
-                   I enjoy solving complex technical challenges and creating user-focused solutions that work at scale.
-                   I'm always looking to collaborate on meaningful projects or join innovative teams where I can grow and contribute as a developer.
+                  My projects include web scraping platforms, recommendation systems, AI tools, and full-stack web applications.
+                  I enjoy solving complex technical problems, designing clean architectures, and building interfaces that are both efficient and intuitive.
+                  I’m always interested in collaborating on meaningful projects where I can contribute as a developer and continue growing in full-stack and AI engineering.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -78,20 +78,20 @@ export const AboutSection = () => {
               {[
                 {
                   icon: Code,
-                  title: "Web Development",
-                  description: "Building interactive full-stack applications using React, Flask, Node.js, and MongoDB.",
+                  title: "Web Applications & Backend Systems",
+                  description: "Building scalable full-stack applications using React, Flask/FastAPI, Node.js, and modern web technologies.",
                   delay: "delay-700"
                 },
                 {
                   icon: User,
-                  title: "AI & Machine Learning Projects",
-                  description: "Developing intelligent systems using ML Algorithms, NLP, computer vision, and recommendation models.",
+                  title: "AI & Machine Learning Systems",
+                  description: "Developing intelligent tools using machine learning, NLP, recommendation systems, and computer vision models.",
                   delay: "delay-900"
                 },
                 {
                   icon: Briefcase,
-                  title: "UI-Focused Development",
-                  description: "Creating clean, responsive, and intuitive interfaces using React, TailwindCSS, and Figma.",
+                  title: "Modern UI & Frontend Development",
+                  description: "Creating responsive, clean, and user-focused interfaces using React, Tailwind CSS, and modern frontend workflows.",
                   delay: "delay-1100"
                 }
               ].map((item, index) => (
