@@ -40,7 +40,7 @@ export const AboutSection = () => {
               </h3>
 
               <p className="text-white">
-                I’m a final-year Computer Science student with hands-on experience building full-stack web platforms, data systems, and AI-powered applications. 
+                I have hands-on experience building full-stack web platforms, data systems, and AI-powered applications. 
                 I work primarily with React, Python (Flask/FastAPI), and modern JavaScript frameworks to create scalable and user-focused software.
               </p>
 
