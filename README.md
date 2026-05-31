@@ -63,7 +63,7 @@ Feel free to reach out for collaboration, freelance work, or any questions!
 
 - 📧 Email: juni.xatti@gmail.com
 - 📍 Location: Islamabad, Pakistan
-- 🌐 [GitHub Profile](https://github.com/JuniXatti)
+- 🌐 [GitHub Profile](https://github.com/juni2003)
 
 ---
 
