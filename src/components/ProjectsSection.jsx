@@ -24,13 +24,13 @@ const projects = [
   },
   {
     id: 3,
-    title: "AI Meme Generator",
+    title: "CareerNode AI",
     description:
-      "A meme generator that combines NLP and computer vision. Generates relevant meme captions using NLP techniques and matches them with the best template via CLIP. Features a GUI built with Tkinter and image APIs for templates.",
+      "An AI-powered job application tracking system that connects to Gmail to automatically capture and organize job-related emails. It uses the Gemini API to extract insights, summarize updates, and streamline pipeline management. Built with a TypeScript-based frontend and Python backend, it helps track applications, statuses, and next steps in one place.",
     image: "/projects/Project3.png",
-    tags: ["Python", "spaCy", "CLIP Model", "Tkinter"], // Fixed spacing
-    demoUrl: "https://www.youtube.com/watch?v=6eGE0wVo5eg",
-    githubUrl: "https://github.com/juni2003/AI-Meme-Generator",
+    tags: ["TypeScript", "Python", "Gemini API", "Gmail Integration", "CSS"],
+    demoUrl: "https://github.com/juni2003/CareerNode",
+    githubUrl: "https://github.com/juni2003/CareerNode",
   },
   {
     id: 4,
