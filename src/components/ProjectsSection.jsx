@@ -29,7 +29,7 @@ const projects = [
       "An AI-powered job application tracking system that connects to Gmail to automatically capture and organize job-related emails. It uses the Gemini API to extract insights, summarize updates, and streamline pipeline management. Built with a TypeScript-based frontend and Python backend, it helps track applications, statuses, and next steps in one place.",
     image: "/projects/Project3.png",
     tags: ["TypeScript", "Python", "Gemini API", "Gmail Integration", "CSS"],
-    demoUrl: "https://github.com/juni2003/CareerNode",
+    demoUrl: "https://www.youtube.com/watch?v=NrvRsbfFK8E",
     githubUrl: "https://github.com/juni2003/CareerNode",
   },
   {
