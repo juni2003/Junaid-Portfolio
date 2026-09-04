@@ -7,15 +7,15 @@ const projects = [
 
 
   {
-  id: 1,
-  title: "NexusAI — Enterprise Agentic Fashion Assistant",
-  description:
-    "NexusAI is an AI-powered fashion shopping assistant that understands intent, not just keywords. It uses LangGraph, Groq, Supabase pgvector, and FastAPI to deliver intelligent product recommendations, instant store-policy support, and real-time streamed chat responses in a modern Next.js frontend.",
-  image: "/projects/Project9_NexusAI",
-  tags: ["TypeScript", "Python", "Next.js", "FastAPI", "LangGraph", "Supabase", "Groq", "TailwindCSS"],
-  demoUrl: "https://nexus-ai-fashion-assistant.vercel.app/",
-  githubUrl: "https://github.com/juni2003/NexusAI-Fashion-Assistant",
-},
+    id: 1,
+    title: "NexusAI — Enterprise Agentic Fashion Assistant",
+    description:
+      "NexusAI is an AI-powered fashion shopping assistant that understands intent, not just keywords. It uses LangGraph, Groq, Supabase pgvector, and FastAPI to deliver intelligent product recommendations, instant store-policy support, and real-time streamed chat responses in a modern Next.js frontend.",
+    image: "/projects/Project9_NexusAI",
+    tags: ["TypeScript", "Python", "Next.js", "FastAPI", "LangGraph", "Supabase", "Groq", "TailwindCSS"],
+    demoUrl: "https://nexus-ai-fashion-assistant.vercel.app/",
+    githubUrl: "https://github.com/juni2003/NexusAI-Fashion-Assistant",
+  },
   
   {
     id: 2,
@@ -25,7 +25,7 @@ const projects = [
     tags: ["React", "MongoDB", "Node.js", "Express.js"], // Fixed spacing
     demoUrl: "https://www.youtube.com/watch?v=JMxPkxq1eaM",
     githubUrl: "https://github.com/juni2003/Metro-Ticketing-System-Project",
-  },
+ },
 
   
  {/*  
@@ -40,6 +40,7 @@ const projects = [
       githubUrl: "https://github.com/juni2003/Movie-Recommendation-System",
     },
   */}
+  
   {
     id: 3,
     title: "CareerNode AI",
