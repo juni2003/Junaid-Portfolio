@@ -4,8 +4,6 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 const projects = [
 
-
-
   {
     id: 1,
     title: "NexusAI — Enterprise Agentic Fashion Assistant",
@@ -25,21 +23,8 @@ const projects = [
     tags: ["React", "MongoDB", "Node.js", "Express.js"], // Fixed spacing
     demoUrl: "https://www.youtube.com/watch?v=JMxPkxq1eaM",
     githubUrl: "https://github.com/juni2003/Metro-Ticketing-System-Project",
- },
+  },
 
-  
- {/*  
-   {
-      id: 2,
-      title: "Movie Recommendation System",
-      description:
-        "An intelligent movie recommender built using TF-IDF and KNN. Backend built in Flask and served to a React-based frontend. Integrated the TMDB API for rich movie metadata and visuals. Designed for personalized user experience with filtering and trending suggestions.",
-      image: "/projects/Project2.png",
-      tags: ["Python", "Flask", "React", "TMDB API", "TailwindCSS"], // Fixed spacing
-      demoUrl: "https://youtu.be/rD4_kNMJ-KY",
-      githubUrl: "https://github.com/juni2003/Movie-Recommendation-System",
-    },
-  */}
   
   {
     id: 3,
