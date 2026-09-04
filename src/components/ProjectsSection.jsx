@@ -3,8 +3,22 @@ import { useState, useEffect, useRef } from 'react';
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 const projects = [
+
+
+
   {
-    id: 1,
+  id: 1,
+  title: "NexusAI — Enterprise Agentic Fashion Assistant",
+  description:
+    "NexusAI is an AI-powered fashion shopping assistant that understands intent, not just keywords. It uses LangGraph, Groq, Supabase pgvector, and FastAPI to deliver intelligent product recommendations, instant store-policy support, and real-time streamed chat responses in a modern Next.js frontend.",
+  image: "/projects/Project9_NexusAI",
+  tags: ["TypeScript", "Python", "Next.js", "FastAPI", "LangGraph", "Supabase", "Groq", "TailwindCSS"],
+  demoUrl: "https://nexus-ai-fashion-assistant.vercel.app/",
+  githubUrl: "https://github.com/juni2003/NexusAI-Fashion-Assistant",
+},
+  
+  {
+    id: 2,
     title: "Metro Ticketing System",
     description: "A web-based metro ticketing platform with real-time fare calculations, routing, and ticket validation. Users can register, log in, and print tickets. Built with a clean frontend in React and TailwindCSS.",
     image: "/projects/Project1.png",
@@ -12,16 +26,20 @@ const projects = [
     demoUrl: "https://www.youtube.com/watch?v=JMxPkxq1eaM",
     githubUrl: "https://github.com/juni2003/Metro-Ticketing-System-Project",
   },
-  {
-    id: 2,
-    title: "Movie Recommendation System",
-    description:
-      "An intelligent movie recommender built using TF-IDF and KNN. Backend built in Flask and served to a React-based frontend. Integrated the TMDB API for rich movie metadata and visuals. Designed for personalized user experience with filtering and trending suggestions.",
-    image: "/projects/Project2.png",
-    tags: ["Python", "Flask", "React", "TMDB API", "TailwindCSS"], // Fixed spacing
-    demoUrl: "https://youtu.be/rD4_kNMJ-KY",
-    githubUrl: "https://github.com/juni2003/Movie-Recommendation-System",
-  },
+
+  
+ {/*  
+   {
+      id: 2,
+      title: "Movie Recommendation System",
+      description:
+        "An intelligent movie recommender built using TF-IDF and KNN. Backend built in Flask and served to a React-based frontend. Integrated the TMDB API for rich movie metadata and visuals. Designed for personalized user experience with filtering and trending suggestions.",
+      image: "/projects/Project2.png",
+      tags: ["Python", "Flask", "React", "TMDB API", "TailwindCSS"], // Fixed spacing
+      demoUrl: "https://youtu.be/rD4_kNMJ-KY",
+      githubUrl: "https://github.com/juni2003/Movie-Recommendation-System",
+    },
+  */}
   {
     id: 3,
     title: "CareerNode AI",
