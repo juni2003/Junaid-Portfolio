@@ -9,7 +9,7 @@ const projects = [
     title: "NexusAI — Enterprise Agentic Fashion Assistant",
     description:
       "NexusAI is an AI-powered fashion shopping assistant that understands intent, not just keywords. It uses LangGraph, Groq, Supabase pgvector, and FastAPI to deliver intelligent product recommendations, instant store-policy support, and real-time streamed chat responses in a modern Next.js frontend.",
-    image: "/projects/Project9_NexusAI",
+    image: "/projects/Project9_NexusAI.png",
     tags: ["TypeScript", "Python", "Next.js", "FastAPI", "LangGraph", "Supabase", "Groq", "TailwindCSS"],
     demoUrl: "https://nexus-ai-fashion-assistant.vercel.app/",
     githubUrl: "https://github.com/juni2003/NexusAI-Fashion-Assistant",
