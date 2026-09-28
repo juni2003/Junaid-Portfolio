@@ -46,12 +46,12 @@ Hi, I'm **Junaid Satti**, a final-year Computer Science student based in Islamab
 
 ## 📁 Notable Projects
 
-| Project                     | Stack                        | Description                                  |
-|----------------------------|------------------------------|----------------------------------------------|
-| 🎫 Metro Ticketing System  | React, Node.js, MongoDB      | Web app for metro bookings & ticketing      |
-| 🎬 Movie Recommender       | Python, Flask, React         | Suggests films based on user preferences     |
-| 🧠 AI Meme Generator       | Python, CLIP, Tkinter        | Generates meme captions using NLP & vision   |
-| 🐥 Flappy Bird Multiplayer | C++, SFML                    | 2-player arcade-style bird game              |
+| Project                     | Stack                                                | Description                                        |
+|----------------------------|-------------------------------------------------------|----------------------------------------------------|
+| 👠 NexusAI — Enterprise Fashion Assistant  | Python, LangGraph, Supabase, Groq     | Your personal shopping assistant.                 |
+| 🎫 Metro Ticketing System                  | React, Node.js, MongoDB               | Web app for metro bookings & ticketing            |
+| 🚜 Smart Farming Agentic AI                | Machine Learning, Deep Learning, RAG  | Crop recommendation, Plant disease detection, Q&A |
+| 🌐 CrawlX – Web Scraping Platform          | FastAPI, Next.js, PostgreSQL, Scrapy  |  Helps to exporting data from real-world websites |
 
 > 💡 All projects include live demos and source code on my GitHub.
 
