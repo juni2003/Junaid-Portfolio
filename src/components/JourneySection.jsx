@@ -124,10 +124,15 @@ const getItemIcon = (type) => {
   return type === "education" ? GraduationCap : BriefcaseBusiness;
 };
 
+const journeyRows = [
+  [journeyItems[0], journeyItems[1]],
+  [journeyItems[3], journeyItems[2]],
+  [journeyItems[4]],
+];
+
 export const JourneySection = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [containerRef, containerVisible] = useScrollAnimation(0.1);
-  const [headerRef, headerVisible] = useScrollAnimation(0.2);
   const [timelineRef, timelineVisible] = useScrollAnimation(0.1);
 
   useEffect(() => {
@@ -149,43 +154,26 @@ export const JourneySection = () => {
   }, [selectedItem]);
 
   return (
-    <section id="journey" className="relative px-4 py-24">
+    <section id="journey" className="relative px-4 py-20">
       <div
         ref={containerRef}
-        className={`relative mx-auto my-8 max-w-6xl rounded-lg bg-black/70 px-5 py-8 text-foreground shadow-lg transition-all duration-1000 md:px-8 ${
+        className={`relative mx-auto my-8 max-w-7xl rounded-lg bg-black/70 px-5 py-8 text-foreground shadow-lg transition-all duration-1000 md:px-8 ${
           containerVisible
             ? "translate-y-0 opacity-100"
             : "translate-y-10 opacity-0"
         }`}
       >
-        <div className="container mx-auto max-w-6xl">
-          <div
-            ref={headerRef}
-            className={`mx-auto mb-16 max-w-3xl text-center transition-all duration-1000 ${
-              headerVisible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-            }`}
-          >
-            <div className="mb-5 flex justify-center">
-              <div className="rounded-full bg-primary/10 p-4 text-primary shadow-[0_0_25px_rgba(234,88,12,0.2)]">
-                <Building2 size={32} />
+        <div className="container mx-auto max-w-7xl">
+          {/* Compact heading */}
+          <div className="mb-12 text-center">
+            <div className="mb-4 flex justify-center">
+              <div className="rounded-full bg-primary/10 p-3 text-primary shadow-[0_0_25px_rgba(234,88,12,0.2)]">
+                <Building2 size={28} />
               </div>
             </div>
 
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-              My Professional Story
-            </p>
-
-            <h2 className="mb-5 text-3xl font-bold text-white md:text-5xl">
-              From Student to{" "}
-              <span className="text-primary">Solutions Engineer</span>
-            </h2>
-
-            <p className="mx-auto max-w-2xl text-white/80">
-              A visual journey through my academic foundation, AI experience,
-              client-facing work, and current role building intelligent
-              full-stack solutions.
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+              Experience & Education
             </p>
           </div>
 
@@ -197,93 +185,137 @@ export const JourneySection = () => {
                 : "translate-y-8 opacity-0"
             }`}
           >
-            {/* Main timeline line */}
-            <div className="absolute left-5 top-0 h-full w-px bg-gradient-to-b from-transparent via-primary/70 to-transparent md:left-1/2 md:-translate-x-1/2" />
-
-            <div className="space-y-12 md:space-y-16">
-              {journeyItems.map((item, index) => {
-                const ItemIcon = getItemIcon(item.type);
-                const isRightSide = index % 2 !== 0;
+            <div className="space-y-10 md:space-y-16">
+              {journeyRows.map((row, rowIndex) => {
+                const isReversedRow = rowIndex % 2 === 1;
+                const isLastRow = row.length === 1;
 
                 return (
                   <div
-                    key={item.id}
-                    className={`relative flex items-start gap-6 md:gap-0 ${
-                      isRightSide ? "md:justify-end" : "md:justify-start"
+                    key={`journey-row-${rowIndex}`}
+                    className={`relative ${
+                      isLastRow
+                        ? "flex justify-center"
+                        : "grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-20"
                     }`}
                   >
-                    {/* Timeline dot */}
-                    <div className="absolute left-5 top-8 z-10 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border-4 border-background bg-primary text-primary-foreground shadow-[0_0_20px_rgba(234,88,12,0.7)] md:left-1/2">
-                      <ItemIcon size={17} />
-                    </div>
+                    {/* Horizontal connector */}
+                    {!isLastRow && (
+                      <div className="absolute left-[12%] right-[12%] top-1/2 hidden h-px -translate-y-1/2 bg-gradient-to-r from-primary/20 via-primary to-primary/20 md:block" />
+                    )}
 
-                    {/* Timeline card */}
-                    <button
-                      type="button"
-                      onClick={() => setSelectedItem(item)}
-                      className={`group ml-12 w-full rounded-2xl border border-white/10 bg-card/90 p-6 text-left shadow-xl backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-primary/70 hover:shadow-[0_0_30px_rgba(234,88,12,0.2)] md:ml-0 md:w-[43%] ${
-                        item.current
-                          ? "border-primary/60 md:w-[48%]"
-                          : index === 0 || index === 4
-                            ? "md:w-[48%]"
-                            : "md:w-[40%]"
-                      }`}
-                      style={{
-                        transitionDelay: `${index * 120}ms`,
-                      }}
-                    >
-                      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                        <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                          <CalendarDays size={14} />
-                          {item.period}
-                        </span>
+                    {/* Vertical connector to the next row */}
+                    {rowIndex < journeyRows.length - 1 && (
+                      <div
+                        className={`absolute hidden h-16 w-px bg-gradient-to-b from-primary via-primary/70 to-transparent md:block ${
+                          isReversedRow
+                            ? "left-[12%] top-[calc(100%-1px)]"
+                            : "right-[12%] top-[calc(100%-1px)]"
+                        }`}
+                      />
+                    )}
 
-                        {item.current && (
-                          <span className="rounded-full bg-green-500/15 px-3 py-1 text-xs font-semibold text-green-400">
-                            Current
-                          </span>
-                        )}
-                      </div>
+                    {row.map((item, itemIndex) => {
+                      const ItemIcon = getItemIcon(item.type);
 
-                      <div className="mb-3 flex items-start gap-3">
-                        <div className="mt-1 rounded-lg bg-primary/10 p-2 text-primary transition-transform duration-300 group-hover:rotate-6">
-                          <ItemIcon size={20} />
+                      return (
+                        <div
+                          key={item.id}
+                          className={`relative z-10 ${
+                            isReversedRow && !isLastRow
+                              ? itemIndex === 0
+                                ? "md:order-2"
+                                : "md:order-1"
+                              : ""
+                          } ${
+                            isLastRow
+                              ? "w-full md:w-[48%]"
+                              : "w-full"
+                          }`}
+                        >
+                          {/* Timeline node */}
+                          <div
+                            className={`absolute top-1/2 z-20 hidden h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border-4 border-background bg-primary text-primary-foreground shadow-[0_0_18px_rgba(234,88,12,0.7)] md:flex ${
+                              isLastRow
+                                ? "left-1/2 -translate-x-1/2"
+                                : itemIndex === 0
+                                  ? "right-[-3.5rem] translate-x-1/2"
+                                  : "left-[-3.5rem] -translate-x-1/2"
+                            }`}
+                          >
+                            <ItemIcon size={14} />
+                          </div>
+
+                          <button
+                            type="button"
+                            onClick={() => setSelectedItem(item)}
+                            className={`group w-full rounded-2xl border bg-card/90 p-5 text-left shadow-xl backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-primary/70 hover:shadow-[0_0_30px_rgba(234,88,12,0.2)] md:p-6 ${
+                              item.current
+                                ? "border-primary/70"
+                                : "border-white/10"
+                            } ${
+                              item.id === 1 || item.id === 5
+                                ? "md:min-h-[260px]"
+                                : item.id === 4
+                                  ? "md:min-h-[235px]"
+                                  : "md:min-h-[205px]"
+                            }`}
+                          >
+                            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                              <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                                <CalendarDays size={14} />
+                                {item.period}
+                              </span>
+
+                              {item.current && (
+                                <span className="rounded-full bg-green-500/15 px-3 py-1 text-xs font-semibold text-green-400">
+                                  Current
+                                </span>
+                              )}
+                            </div>
+
+                            <div className="mb-3 flex items-start gap-3">
+                              <div className="mt-1 rounded-lg bg-primary/10 p-2 text-primary transition-transform duration-300 group-hover:rotate-6">
+                                <ItemIcon size={20} />
+                              </div>
+
+                              <div>
+                                <h3 className="text-lg font-bold text-white">
+                                  {item.role}
+                                </h3>
+
+                                <p className="mt-1 text-sm font-medium text-primary">
+                                  {item.company}
+                                </p>
+                              </div>
+                            </div>
+
+                            <p className="mb-5 text-sm leading-6 text-white/75">
+                              {item.summary}
+                            </p>
+
+                            <div className="flex items-center justify-between gap-3 border-t border-white/10 pt-4">
+                              <span className="text-xs text-white/50">
+                                {item.dateLabel}
+                              </span>
+
+                              <span className="text-sm font-semibold text-primary transition-transform duration-300 group-hover:translate-x-1">
+                                View details →
+                              </span>
+                            </div>
+                          </button>
                         </div>
-
-                        <div>
-                          <h3 className="text-lg font-bold text-white md:text-xl">
-                            {item.role}
-                          </h3>
-
-                          <p className="mt-1 text-sm font-medium text-primary">
-                            {item.company}
-                          </p>
-                        </div>
-                      </div>
-
-                      <p className="mb-5 text-sm leading-6 text-white/75">
-                        {item.summary}
-                      </p>
-
-                      <div className="flex items-center justify-between gap-3 border-t border-white/10 pt-4">
-                        <span className="text-xs text-white/50">
-                          {item.dateLabel}
-                        </span>
-
-                        <span className="text-sm font-semibold text-primary transition-transform duration-300 group-hover:translate-x-1">
-                          Click for details →
-                        </span>
-                      </div>
-                    </button>
+                      );
+                    })}
                   </div>
                 );
               })}
             </div>
           </div>
 
-          <div className="mt-16 text-center">
+          <div className="mt-12 text-center">
             <p className="text-sm italic text-white/60">
-              Every stage added a new layer to the way I build technology.
+              Each experience added a new layer to my technical journey.
             </p>
           </div>
         </div>
@@ -338,7 +370,10 @@ export const JourneySection = () => {
                   <CalendarDays size={17} />
                   <span className="text-sm font-semibold">Timeline</span>
                 </div>
-                <p className="text-sm text-white/75">{selectedItem.period}</p>
+
+                <p className="text-sm text-white/75">
+                  {selectedItem.period}
+                </p>
               </div>
 
               <div className="rounded-xl border border-white/10 bg-black/20 p-4">
@@ -346,7 +381,10 @@ export const JourneySection = () => {
                   <MapPin size={17} />
                   <span className="text-sm font-semibold">Location</span>
                 </div>
-                <p className="text-sm text-white/75">{selectedItem.location}</p>
+
+                <p className="text-sm text-white/75">
+                  {selectedItem.location}
+                </p>
               </div>
             </div>
 
@@ -354,6 +392,7 @@ export const JourneySection = () => {
               <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
                 Key Highlight
               </p>
+
               <p className="text-lg font-semibold text-white">
                 {selectedItem.achievement}
               </p>
@@ -364,7 +403,9 @@ export const JourneySection = () => {
                 What I Worked On
               </h4>
 
-              <p className="leading-7 text-white/75">{selectedItem.details}</p>
+              <p className="leading-7 text-white/75">
+                {selectedItem.details}
+              </p>
             </div>
 
             <div>
