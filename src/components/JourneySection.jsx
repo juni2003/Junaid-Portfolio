@@ -120,18 +120,20 @@ const journeyItems = [
   },
 ];
 
-const getItemIcon = (type) => {
-  return type === "education" ? GraduationCap : BriefcaseBusiness;
-};
-
 const journeyRows = [
   [journeyItems[0], journeyItems[1]],
   [journeyItems[3], journeyItems[2]],
   [journeyItems[4]],
 ];
 
+const getItemIcon = (type) => {
+  return type === "education" ? GraduationCap : BriefcaseBusiness;
+};
+
 export const JourneySection = () => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState(null);
+
   const [containerRef, containerVisible] = useScrollAnimation(0.1);
   const [timelineRef, timelineVisible] = useScrollAnimation(0.1);
 
@@ -157,17 +159,17 @@ export const JourneySection = () => {
     <section id="journey" className="relative px-4 py-20">
       <div
         ref={containerRef}
-        className={`relative mx-auto my-8 max-w-7xl rounded-lg bg-black/70 px-5 py-8 text-foreground shadow-lg transition-all duration-1000 md:px-8 ${
+        className={`relative mx-auto my-8 max-w-7xl rounded-lg bg-black/70 px-5 py-8 text-foreground shadow-lg transition-all duration-1000 md:px-10 ${
           containerVisible
             ? "translate-y-0 opacity-100"
             : "translate-y-10 opacity-0"
         }`}
       >
         <div className="container mx-auto max-w-7xl">
-          {/* Compact heading */}
-          <div className="mb-12 text-center">
+          {/* Compact section heading */}
+          <div className="mb-14 text-center">
             <div className="mb-4 flex justify-center">
-              <div className="rounded-full bg-primary/10 p-3 text-primary shadow-[0_0_25px_rgba(234,88,12,0.2)]">
+              <div className="rounded-full bg-primary/10 p-3 text-primary shadow-[0_0_25px_rgba(234,88,12,0.25)]">
                 <Building2 size={28} />
               </div>
             </div>
@@ -179,68 +181,69 @@ export const JourneySection = () => {
 
           <div
             ref={timelineRef}
-            className={`relative transition-all duration-1000 ${
+            className={`transition-all duration-1000 ${
               timelineVisible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-8 opacity-0"
             }`}
           >
-            <div className="space-y-10 md:space-y-16">
+            <div className="space-y-16">
               {journeyRows.map((row, rowIndex) => {
+                const isSingleCardRow = row.length === 1;
                 const isReversedRow = rowIndex % 2 === 1;
-                const isLastRow = row.length === 1;
 
                 return (
                   <div
                     key={`journey-row-${rowIndex}`}
                     className={`relative ${
-                      isLastRow
+                      isSingleCardRow
                         ? "flex justify-center"
-                        : "grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-20"
+                        : "grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-24"
                     }`}
                   >
-                    {/* Horizontal connector */}
-                    {!isLastRow && (
-                      <div className="absolute left-[12%] right-[12%] top-1/2 hidden h-px -translate-y-1/2 bg-gradient-to-r from-primary/20 via-primary to-primary/20 md:block" />
+                    {/* Horizontal connector between two cards */}
+                    {!isSingleCardRow && (
+                      <div className="pointer-events-none absolute left-[25%] right-[25%] top-0 z-0 hidden h-1 -translate-y-1/2 rounded-full bg-primary/45 shadow-[0_0_10px_rgba(234,88,12,0.2)] md:block" />
                     )}
 
-                    {/* Vertical connector to the next row */}
+                    {/* Vertical connector between rows */}
                     {rowIndex < journeyRows.length - 1 && (
                       <div
-                        className={`absolute hidden h-16 w-px bg-gradient-to-b from-primary via-primary/70 to-transparent md:block ${
+                        className={`pointer-events-none absolute hidden h-16 w-1 rounded-full bg-primary/45 shadow-[0_0_10px_rgba(234,88,12,0.2)] md:block ${
                           isReversedRow
-                            ? "left-[12%] top-[calc(100%-1px)]"
-                            : "right-[12%] top-[calc(100%-1px)]"
+                            ? "left-[25%] top-full"
+                            : "right-[25%] top-full"
                         }`}
                       />
                     )}
 
                     {row.map((item, itemIndex) => {
                       const ItemIcon = getItemIcon(item.type);
+                      const isHovered = hoveredItem === item.id;
 
                       return (
                         <div
                           key={item.id}
-                          className={`relative z-10 ${
-                            isReversedRow && !isLastRow
+                          className={`relative z-10 pt-5 ${
+                            isSingleCardRow
+                              ? "w-full md:w-[48%]"
+                              : "w-full"
+                          } ${
+                            isReversedRow && !isSingleCardRow
                               ? itemIndex === 0
                                 ? "md:order-2"
                                 : "md:order-1"
                               : ""
-                          } ${
-                            isLastRow
-                              ? "w-full md:w-[48%]"
-                              : "w-full"
                           }`}
+                          onMouseEnter={() => setHoveredItem(item.id)}
+                          onMouseLeave={() => setHoveredItem(null)}
                         >
-                          {/* Timeline node */}
+                          {/* Dot placed exactly above the center of each card */}
                           <div
-                            className={`absolute top-1/2 z-20 hidden h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border-4 border-background bg-primary text-primary-foreground shadow-[0_0_18px_rgba(234,88,12,0.7)] md:flex ${
-                              isLastRow
-                                ? "left-1/2 -translate-x-1/2"
-                                : itemIndex === 0
-                                  ? "right-[-3.5rem] translate-x-1/2"
-                                  : "left-[-3.5rem] -translate-x-1/2"
+                            className={`absolute left-1/2 top-0 z-30 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-background bg-primary text-primary-foreground transition-all duration-300 ${
+                              isHovered
+                                ? "scale-125 shadow-[0_0_28px_rgba(234,88,12,0.95)]"
+                                : "shadow-[0_0_16px_rgba(234,88,12,0.65)]"
                             }`}
                           >
                             <ItemIcon size={14} />
@@ -249,18 +252,31 @@ export const JourneySection = () => {
                           <button
                             type="button"
                             onClick={() => setSelectedItem(item)}
-                            className={`group w-full rounded-2xl border bg-card/90 p-5 text-left shadow-xl backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-primary/70 hover:shadow-[0_0_30px_rgba(234,88,12,0.2)] md:p-6 ${
+                            className={`group relative w-full rounded-2xl border bg-card/95 p-5 text-left backdrop-blur-sm transition-all duration-300 md:p-6 ${
+                              isHovered
+                                ? "scale-[1.035] border-primary shadow-[0_0_35px_rgba(234,88,12,0.3)]"
+                                : "border-primary/45 shadow-xl"
+                            } ${
                               item.current
-                                ? "border-primary/70"
-                                : "border-white/10"
+                                ? "ring-1 ring-primary/30"
+                                : ""
                             } ${
                               item.id === 1 || item.id === 5
-                                ? "md:min-h-[260px]"
+                                ? "md:min-h-[255px]"
                                 : item.id === 4
                                   ? "md:min-h-[235px]"
-                                  : "md:min-h-[205px]"
+                                  : "md:min-h-[210px]"
                             }`}
                           >
+                            {/* Card top accent line */}
+                            <div
+                              className={`absolute left-1/2 top-0 h-1 -translate-x-1/2 rounded-full bg-primary transition-all duration-300 ${
+                                isHovered
+                                  ? "w-3/4 opacity-100 shadow-[0_0_12px_rgba(234,88,12,0.9)]"
+                                  : "w-1/3 opacity-70"
+                              }`}
+                            />
+
                             <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                               <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                                 <CalendarDays size={14} />
@@ -275,12 +291,16 @@ export const JourneySection = () => {
                             </div>
 
                             <div className="mb-3 flex items-start gap-3">
-                              <div className="mt-1 rounded-lg bg-primary/10 p-2 text-primary transition-transform duration-300 group-hover:rotate-6">
+                              <div
+                                className={`mt-1 rounded-lg bg-primary/10 p-2 text-primary transition-all duration-300 ${
+                                  isHovered ? "rotate-6 bg-primary/20" : ""
+                                }`}
+                              >
                                 <ItemIcon size={20} />
                               </div>
 
                               <div>
-                                <h3 className="text-lg font-bold text-white">
+                                <h3 className="text-lg font-bold leading-tight text-white">
                                   {item.role}
                                 </h3>
 
@@ -299,7 +319,11 @@ export const JourneySection = () => {
                                 {item.dateLabel}
                               </span>
 
-                              <span className="text-sm font-semibold text-primary transition-transform duration-300 group-hover:translate-x-1">
+                              <span
+                                className={`text-sm font-semibold text-primary transition-transform duration-300 ${
+                                  isHovered ? "translate-x-1" : ""
+                                }`}
+                              >
                                 View details →
                               </span>
                             </div>
