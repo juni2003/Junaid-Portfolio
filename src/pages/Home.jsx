@@ -7,6 +7,7 @@ import { AboutSection } from "@/components/AboutSection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { CertificationsSection } from "@/components/CertificationsSection";
+import { JourneySection } from "@/components/JourneySection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
@@ -27,15 +28,16 @@ export const Home = () => {
         <Navbar/>
 
         {/* Main Content */}
-        <main>
-            <HeroSection/>
-            <AboutSection/>
-            <SkillsSection/>
-            <ProjectsSection/>
-            <CertificationsSection />
-            <ContactSection/>
-        </main>
 
+        <main>
+            <HeroSection />
+            <AboutSection />
+            <JourneySection />
+            <SkillsSection />
+            <ProjectsSection />
+            <CertificationsSection />
+            <ContactSection />
+        </main>
 
         {/* Footer */}
         <Footer/>
