@@ -41,7 +41,7 @@ const journeyItems = [
       "Worked on multimodal medical AI systems using ETL pipelines, BioBERT, PyTorch, RAG, and vector indexing.",
     details:
       "Engineered automated ETL data pipelines and integrated domain-specific language models, including BioBERT and PyTorch-based components, to process multimodal visual and textual data for Medical Visual Question Answering. Also worked on production RAG pipelines and vector indexing workflows to improve retrieval accuracy and multi-step reasoning.",
-    location: "Remote",
+    location: "Islamabad, Pakistan",
     achievement: "Medical AI and RAG Engineering",
     technologies: [
       "Python",
@@ -84,7 +84,7 @@ const journeyItems = [
       "Built an Agentic AI Smart Farming Advisor using RAG, vector databases, APIs, and intelligent semantic routing.",
     details:
       "Completed an intensive three-month engineering fellowship focused on Agentic AI workflows, LLM orchestration, MCP integrations, and backend APIs. Developed a multi-tool Smart Farming Advisor that achieved 99.19% accuracy using RAG pipelines, vector databases, REST APIs, and automated data processing. Also engineered an intelligent LLM semantic router that achieved 100% automated intent classification.",
-    location: "Remote",
+    location: "Islamabad, Pakistan (Remote)",
     achievement: "99.19% Model Accuracy",
     technologies: [
       "Agentic AI",
@@ -106,7 +106,7 @@ const journeyItems = [
       "Leading technical pre-sales, architecture scoping, and AI/full-stack solution design for international clients.",
     details:
       "Work directly with the CEO and executive leadership to establish the company’s international technical presence, agency architecture, and engineering portfolio on Upwork. Lead technical pre-sales, system architecture scoping, and client requirement discovery for MERN, Next.js, FastAPI, RAG, and Agentic AI projects. Engineer technical proposals, project roadmaps, and system architecture designs for international client bids.",
-    location: "Remote",
+    location: "Hybrid (mostly Remote)",
     achievement: "Current Role",
     technologies: [
       "MERN",
