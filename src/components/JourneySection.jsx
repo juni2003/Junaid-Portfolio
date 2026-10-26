@@ -300,7 +300,7 @@ export const JourneySection = () => {
                               </div>
 
                               <div>
-                                <h3 className="text-lg font-bold leading-tight text-white">
+                                <h3 className="text-lg font-bold leading-tight text-foreground">
                                   {item.role}
                                 </h3>
 
@@ -310,12 +310,12 @@ export const JourneySection = () => {
                               </div>
                             </div>
 
-                            <p className="mb-5 text-sm leading-6 text-white/75">
+                            <p className="mb-5 text-sm leading-6 text-foreground/75">
                               {item.summary}
                             </p>
 
                             <div className="flex items-center justify-between gap-3 border-t border-white/10 pt-4">
-                              <span className="text-xs text-white/50">
+                              <span className="text-xs text-foreground/50">
                                 {item.dateLabel}
                               </span>
 
@@ -338,7 +338,7 @@ export const JourneySection = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-sm italic text-white/60">
+            <p className="text-sm italic text-foreground/60">
               Each experience added a new layer to my technical journey.
             </p>
           </div>
@@ -358,7 +358,7 @@ export const JourneySection = () => {
             <button
               type="button"
               onClick={() => setSelectedItem(null)}
-              className="absolute right-4 top-4 rounded-full p-2 text-white/70 transition-colors hover:bg-red-500 hover:text-white"
+              className="absolute right-4 top-4 rounded-full p-2 text-foreground/70 transition-colors hover:bg-red-500 hover:text-foreground"
               aria-label="Close journey details"
             >
               <X size={22} />
@@ -378,11 +378,11 @@ export const JourneySection = () => {
                   {selectedItem.period}
                 </p>
 
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-foreground">
                   {selectedItem.role}
                 </h3>
 
-                <p className="mt-1 font-medium text-white/70">
+                <p className="mt-1 font-medium text-foreground/70">
                   {selectedItem.company}
                 </p>
               </div>
@@ -395,7 +395,7 @@ export const JourneySection = () => {
                   <span className="text-sm font-semibold">Timeline</span>
                 </div>
 
-                <p className="text-sm text-white/75">
+                <p className="text-sm text-foreground/75">
                   {selectedItem.period}
                 </p>
               </div>
@@ -406,7 +406,7 @@ export const JourneySection = () => {
                   <span className="text-sm font-semibold">Location</span>
                 </div>
 
-                <p className="text-sm text-white/75">
+                <p className="text-sm text-foreground/75">
                   {selectedItem.location}
                 </p>
               </div>
@@ -417,23 +417,23 @@ export const JourneySection = () => {
                 Key Highlight
               </p>
 
-              <p className="text-lg font-semibold text-white">
+              <p className="text-lg font-semibold text-foreground">
                 {selectedItem.achievement}
               </p>
             </div>
 
             <div className="mb-6">
-              <h4 className="mb-3 text-lg font-bold text-white">
+              <h4 className="mb-3 text-lg font-bold text-foreground">
                 What I Worked On
               </h4>
 
-              <p className="leading-7 text-white/75">
+              <p className="leading-7 text-foreground/75">
                 {selectedItem.details}
               </p>
             </div>
 
             <div>
-              <h4 className="mb-3 text-lg font-bold text-white">
+              <h4 className="mb-3 text-lg font-bold text-foreground">
                 Skills & Technologies
               </h4>
 
