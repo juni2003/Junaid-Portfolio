@@ -52,11 +52,11 @@ export const CertificationsSection = () => {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 text-center">
+            <h2 className="text-foreground text-3xl md:text-4xl font-bold mb-4 text-center">
               My <span className="text-primary">Certifications</span>
             </h2>
 
-            <p className="text-center text-white mb-12 max-w-2xl mx-auto">
+            <p className="text-center text-foreground mb-12 max-w-2xl mx-auto">
               A collection of certifications and courses that support my
               journey in AI, machine learning, and software development.
             </p>
@@ -90,7 +90,7 @@ export const CertificationsSection = () => {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-3">
+                <h3 className="text-lg font-bold text-foreground mb-3">
                   {certificate.title}
                 </h3>
 
@@ -103,7 +103,7 @@ export const CertificationsSection = () => {
                     href={certificate.file}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-primary hover:text-white transition-colors duration-300"
+                    className="flex items-center gap-2 text-sm text-primary hover:text-foreground transition-colors duration-300"
                   >
                     <ExternalLink size={17} />
                     View
@@ -112,7 +112,7 @@ export const CertificationsSection = () => {
                   <a
                     href={certificate.file}
                     download
-                    className="flex items-center gap-2 text-sm text-primary hover:text-white transition-colors duration-300"
+                    className="flex items-center gap-2 text-sm text-primary hover:text-foreground transition-colors duration-300"
                   >
                     <Download size={17} />
                     Download
