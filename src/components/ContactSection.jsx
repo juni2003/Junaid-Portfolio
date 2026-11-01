@@ -1,11 +1,12 @@
 import {
-  Instagram,
+  Github,
   Linkedin,
+  Instagram,
   Mail,
-  MapPin,
   Phone,
+  MapPin,
   Send,
-  Twitter,
+  Youtube,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import emailjs from '@emailjs/browser';
@@ -206,14 +207,23 @@ export const ContactSection = () => {
                 <h4 className="font-medium mb-4">Connect With Me</h4>
                 <div className="flex space-x-4 justify-center">
                   {[
-                    { icon: Linkedin, href: "https://www.linkedin.com/in/junaid-mohi-ud-din-b77137404/" },
-                    { icon: Youtube, href: "https://www.youtube.com/@junaid_portfolio" },
-                    { icon: Github, href: "https://github.com/juni2003" }
+                    {
+                      icon: Linkedin,
+                      href: "https://www.linkedin.com/in/junaid-mohi-ud-din-b77137404/",
+                    },
+                    {
+                      icon: Youtube,
+                      href: "https://www.youtube.com/@junaid_portfolio",
+                    },
+                    {
+                      icon: Github,
+                      href: "https://github.com/juni2003",
+                    },
                   ].map((social, index) => (
-                    <a 
+                    <a
                       key={index}
-                      className="hover:text-primary transition-all duration-300 transform hover:scale-125 hover:-translate-y-1" 
-                      href={social.href} 
+                      className="hover:text-primary transition-all duration-300 transform hover:scale-125 hover:-translate-y-1"
+                      href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
